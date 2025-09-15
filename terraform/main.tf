@@ -17,11 +17,6 @@ provider "aws" {
 }
 
 resource "aws_instance" "demo" {
-  ami           = "ami-12345678"
-  instance_type = "t2.micro"
-}
-
-resource "aws_instance" "demo" {
   ami           = var.ami_id           # ← varie à chaque commit
   instance_type = "t2.micro"
 
@@ -34,10 +29,5 @@ resource "aws_instance" "demo" {
   }
 }
 
-output "instance_id" {
-  value = aws_instance.demo.id
-}
-output "image_id" {
-  value = var.ami_id
-}
+
 
